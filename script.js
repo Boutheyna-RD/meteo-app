@@ -59,6 +59,12 @@ function formatDate(date){
     searchCity(searchInput.value);
     }
 
+    function formatDay(timestamp){
+     let date = new Date(timestamp *1000);
+    let days = ['Sun', 'Mond', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']; 
+
+     return days[date.getDay()];
+    }
 
     function getForecast(city){
        let apiKey= "43c1b8ao5e84tb2dd9c11bcc70e4f1d2";
@@ -69,31 +75,28 @@ function formatDate(date){
        console.log(apiUrl);
     }
 
-    function displayForecast (response){
-      console.log(response.data);
 
-    }
-
-    function displayForecast(){
+    function displayForecast(response){
       let forecastEl = document.querySelector('#forecast');
 
-      let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+      /*let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];*/
       let forecastHtml ="";
 
-      days.forEach(function (day){
+      response.data.daily.forEach(function (day, index){
+        if (index <5 ){
         forecastHtml=forecastHtml + `
         <div class="forecast-day">
-                <div class="forecast-date">${day}</div>
-                <div class="forecast-icon">img</div>
+                <div class="forecast-date">${formatDay(day.time)}</div>
+                <div ><img class="forecast-icon" src="${day.condition.icon_url}" /></div>
                 <div class="forecast-temps">
                     <div class="forecast-temps-m">
-                    <strong>27°</strong>
+                    <strong>${Math.round(day.temperature.maximum)}°</strong>
                     </div>
-                    <div class="forecast-temps-m">30°</div>  
+                    <div class="forecast-temps-m">${Math.round(day.temperature.minimum)}°</div>  
                 </div>
             </div>`;
-      });
-
+          } }); 
+   
       forecastEl.innerHTML = forecastHtml;
 
     }
@@ -102,4 +105,4 @@ function formatDate(date){
     form.addEventListener("submit", handelSearch)
 
     searchCity("France");
-    displayForecast();
+   
