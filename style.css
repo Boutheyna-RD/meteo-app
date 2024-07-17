@@ -94,7 +94,9 @@
       }
 
       .time{
-         align-self: flex-start; margin-bottom: auto;
+      color: rgb(59, 29, 59);
+      margin: -10px 0 0 0;
+     
       }
 
       .weather-data{
