@@ -22,6 +22,7 @@
      h5{
       font-family: "PT Mono", monospace;
 
+
      }
    
       .app-container{
@@ -52,8 +53,6 @@
       .data{margin-left: 20px;}
       .search-container{
           display: flex;
-          /*justify-items: center;
-          justify-content: center;*/
           border-radius:15px;
          height: 30px;
           border: 1px solid gray;
@@ -85,6 +84,10 @@
 
       /*main*/
 
+      .sky-icon{
+         margin-top: 20px;
+      }
+
      #infos {margin-left: 20px}
       main{
        display: flex; 
@@ -95,48 +98,55 @@
 
       .time{
       color: rgb(59, 29, 59);
-      margin: -10px 0 0 0;
-     
+      margin-top: 20px;     
       }
 
       .weather-data{
          display: flex; flex-direction: column; justify-content: space-around;
       }
       .weather-condition{
-         margin-bottom: auto;
+         margin-bottom: 50px;
       }
       .current-temp{align-self: flex-start; margin-bottom: auto; display: flex;}
-      .conition{text-align: center; margin-top: 10px;}
+
+      .weather-condition h5.condition {color: bisque; margin-top: 20px;text-align: center}
 
 
       #forecast{
-         border: 5px solid gold;
-            display: flex; justify-content: space-between; text-align: center;
-            padding: 30px;
+            display: flex; justify-content: space-around; text-align: center;
+            padding-bottom: 20px;
       }
 
-      .forecast > div {
-         border: 1px solid black;
-         padding: 8px;
+      #forecast  .forecast-day {
+         border: 1px solid rgba(141, 138, 138, 0.2);
+         padding: 20px 30px;
          border-radius: 8px;
+         cursor: pointer;
      }
+     #forecast  .forecast-day:hover {
+      background-color: rgba(141, 138, 138, 0.2);
+      border: none;
+  }
 
      .forecast-date{
-         color: palevioletred;
+         color: rgb(216, 56, 110);
+         font-weight: bold;
+
+
      }
      .forecast-temps{
          display: flex;
+         justify-content: space-between;
     
- 
      }
      .forecast-temps-m, .forcast-temps-m strong{
-         color: red;
+         color: rgb(180, 16, 180);
      }
 
      .forecast-icon {
       width: 62px;
       height: 62px;
-      text-align: center;
+      text-align: center;      
       /*display: block;
       margin: 0 auto;*/
      }
@@ -149,5 +159,5 @@
           margin-top: 30px;
           text-align: center;
           font-size: 13px;
-          color: gray;
+          color: rgb(102, 100, 100);
       }

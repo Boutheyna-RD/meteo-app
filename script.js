@@ -61,7 +61,7 @@ function formatDate(date){
 
     function formatDay(timestamp){
      let date = new Date(timestamp *1000);
-    let days = ['Sun', 'Mond', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']; 
+    let days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']; 
 
      return days[date.getDay()];
     }
@@ -106,3 +106,6 @@ function formatDate(date){
 
     searchCity("France");
    
+
+
+    
