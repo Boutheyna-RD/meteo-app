@@ -14,7 +14,15 @@
       align-items: center;
       height: 100vh; 
       padding: auto;
+      font-family: "Ubuntu", sans-serif;
+
       }
+
+
+     h5{
+      font-family: "PT Mono", monospace;
+
+     }
    
       .app-container{
          width: 750px;
@@ -106,4 +114,5 @@
           margin-top: 30px;
           text-align: center;
           font-size: 13px;
+          color: gray;
       }
