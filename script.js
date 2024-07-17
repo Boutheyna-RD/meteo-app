@@ -57,6 +57,20 @@ function formatDate(date){
     }
 
 
+    function getForecast(city){
+       let apiKey= "43c1b8ao5e84tb2dd9c11bcc70e4f1d2";
+       let apiUrl =`https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+
+       axios.get(apiUrl).then(displayForecast);
+
+       console.log(apiUrl);
+    }
+
+    function displayForecast (response){
+      console.log(response.data);
+
+    }
+
     function displayForecast(){
       let forecastEl = document.querySelector('#forecast');
 
@@ -85,8 +99,5 @@ function formatDate(date){
     form.addEventListener("submit", handelSearch)
 
     searchCity("France");
-
-
-   
-
+    getForecast("France");
     displayForecast();
