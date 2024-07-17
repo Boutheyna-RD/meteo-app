@@ -56,7 +56,37 @@ function formatDate(date){
     searchCity(searchInput.value);
     }
 
+
+    function displayForecast(){
+      let forecastEl = document.querySelector('#forecast');
+
+      let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+      let forecastHtml ="";
+
+      days.forEach(function (day){
+        forecastHtml=forecastHtml + `
+        <div class="forecast-day">
+                <div class="forecast-date">${day}</div>
+                <div class="forecast-icon">img</div>
+                <div class="forecast-temps">
+                    <div class="forecast-temps-m">
+                    <strong>27°</strong>
+                    </div>
+                    <div class="forecast-temps-m">30°</div>  
+                </div>
+            </div>`;
+      });
+
+      forecastEl.innerHTML = forecastHtml;
+
+    }
+
     let form = document.querySelector('#search-form');
     form.addEventListener("submit", handelSearch)
 
     searchCity("France");
+
+
+   
+
+    displayForecast();

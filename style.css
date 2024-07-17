@@ -107,6 +107,31 @@
       }
       .current-temp{align-self: flex-start; margin-bottom: auto; display: flex;}
       .conition{text-align: center; margin-top: 10px;}
+
+
+      #forecast{
+         border: 5px solid gold;
+            display: flex; justify-content: space-between; text-align: center;
+            padding: 30px;
+      }
+
+      .forecast > div {
+         border: 1px solid black;
+         padding: 8px;
+         border-radius: 8px;
+     }
+
+     .forecast-date{
+         color: palevioletred;
+     }
+     .forecast-temps{
+         display: flex;
+    
+ 
+     }
+     .forecast-temps-m, .forcast-temps-m strong{
+         color: red;
+     }
       /*footer*/
       hr{
         /*  margin-top: 30px;*/
