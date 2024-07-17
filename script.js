@@ -29,6 +29,9 @@ function refreshWeather(response){
 
   let iconEl =document.querySelector('.sky-icon');
  iconEl.innerHTML =`<img src="${response.data.condition.icon_url}" width="130px">`;
+
+ getForecast(response.data.city);
+
 }
 
 function formatDate(date){ 
@@ -99,5 +102,4 @@ function formatDate(date){
     form.addEventListener("submit", handelSearch)
 
     searchCity("France");
-    getForecast("France");
     displayForecast();
